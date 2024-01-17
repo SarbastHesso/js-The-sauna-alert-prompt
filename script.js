@@ -1,8 +1,15 @@
+const fahrenheitToCelsius = (fahrenheit)  => {
+  return parseInt((fahrenheit - 32) * 5/9)
+};
+
 const temperatureController = () => {
+
   let temperatureInFahrenheit = prompt('Pleas, enter the temperature in Fahrenheit:');
 
   while (temperatureInFahrenheit){
-    let temperatureInCelsius = parseInt(((temperatureInFahrenheit - 32) * 5) / 9);
+
+    let temperatureInCelsius = fahrenheitToCelsius(temperatureInFahrenheit);
+
     if (temperatureInCelsius <= 77 && temperatureInCelsius >= 73) {
       alert(`Sauna temperature is: ${temperatureInFahrenheit} fahrenheit. Enjoy!`);
       break;
@@ -15,6 +22,7 @@ const temperatureController = () => {
     }
 
     temperatureInFahrenheit = prompt("Pleas, Set a new temperature in Fahrenheit:");
+    
   }
 }
 
